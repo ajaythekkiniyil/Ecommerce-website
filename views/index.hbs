@@ -1,0 +1,51 @@
+{{>header}}
+{{>carousel}}
+
+<!-- products -->
+
+<div class="container mt-5">
+
+    <div class="row">
+        {{#each products}}
+        <div class="card col-12 col-lg-3 mt-5" style="width: 18rem;">
+            <div class="imageBox">
+                <img src="/images/productImages/{{this._id}}.jpg" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">{{this.name}}</h5>
+                <p class="text-center">RS.{{this.price}}</p>
+
+                <button class="btn btn-dark"
+                    onclick="addToCart('?id={{this._id}}&name={{this.name}}&price={{this.price}}')"><i
+                        class="fa fa-shopping-cart" style="font-size:21px"></i>
+                    Add to cart
+                </button>
+
+
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<!-- /products -->
+{{>footer}}
+
+<script>
+    function addToCart(query) {
+        $.ajax({
+            url: '/add-to-cart' + query,
+            method: 'get',
+            success: (response) => {
+                if (response.status) {
+                    let count = $('#cartCount').html()
+                    count = parseInt(count) + 1
+                    $('#cartCount').html(count)
+
+                }
+            }
+        })
+    }
+</script>

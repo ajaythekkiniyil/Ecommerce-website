@@ -1,0 +1,12 @@
+.card{
+
+  height: 24rem;
+}
+.card .imageBox{
+
+  height: 15rem;
+}
+.card .imageBox img{
+  width: 100%;
+  height: 100%;
+}

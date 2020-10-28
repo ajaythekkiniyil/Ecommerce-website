@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Your order</h1>
+    <h4>Details</h4>
+    <div class="col-12 col-lg-12">
+        <table>
+            <thead>
+                <td class="col-12  text-success">Date</td>
+                <td class="col-12  text-success">Address</td>
+                <td class="col-12  text-success">Mobile</td>
+                <td class="col-12  text-success">Amount</td>
+                <td class="col-12  text-success">Payment</td>
+                <td class="col-12  text-success">Status</td>
+                <td></td>
+            </thead>
+            <tbody>
+                {{#each trackUser}}
+                <tr>
+                    <td class="col">{{this.date}}</td>
+                    <td class="col">{{this.deliveryDetails.address}}</td>
+                    <td class="col">{{this.deliveryDetails.phone}}</td>
+                    <td class="col">{{this.totalAmount}}</td>
+                    <td class="col">{{this.paymentMethod}}</td>
+                    <td class="col">{{this.status}}</td>
+                    <td><a href="/view-items" class="col btn btn-warning">view</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+<!-- navbars -->
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="/">Online-Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active">
+                <a class="nav-link text-white" href="/">Products</a>
+            </li>
+        </ul>
+        <div>
+            {{#if user}}
+            <a href="/cart"><i class="fa fa-shopping-cart btn btn-dark" style="font-size:21px"> cart<span
+                        class="badge  badge-danger ml-2" id="cartCount">{{cartCount}}</span></i></a>
+
+            <a href="/login"><button type="button" class="btn btn-dark">{{user.firstname}}</button></a>
+            <a href="/logout"><button type="button" class="btn btn-dark">logout</button></a>
+            {{else}}
+            <a href="/cart"><i class="fa fa-shopping-cart btn btn-dark" style="font-size:21px"> cart</i></a>
+            <a href="/login"><button type="button" class="btn btn-dark">login</button></a>
+            {{/if}}
+
+        </div>
+
+    </div>
+</nav>
+<!-- /navbars -->

@@ -1,0 +1,16 @@
+<h1>Your items</h1>
+<div class="container">
+    <div class="row">
+        {{#each trackProducts}}
+        <div class="col-12 col-md-3 mt-4">
+            <div class="float-left">
+                <img src="/images/productImages/{{this.product.id}}.jpg" alt="" style="width: 150px;height: 120px;">
+            </div>
+            <div class="float-right">
+                <h6>Quantity:{{this.quantity}}</h6>
+                <h6>Price:{{this.updatedPrice}}</h6>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

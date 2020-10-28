@@ -1,0 +1,20 @@
+{{>admin-header}}
+<div class="container mt-5">
+    <form action="add-products" method="POST" enctype="multipart/form-data">
+        <h1>Add products</h1>
+        <div class="form-group">
+            <label for="name">Name Of Product</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name of Product">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" name="price" placeholder="Enter Price of Product">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" id="image" name="image" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
